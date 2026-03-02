@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>DR Prediction</title>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            padding-left: 20px;
+        }
+
+        .prediction-section {
+            padding: 70px 0;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .result-text {
+            font-weight: 600;
+            color: #06cd1d;
+        }
+
+        .info-image {
+            max-width: 850px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand text-white" href="#">
+            Diabetic Retinopathy Classification
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="index">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="logout">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Prediction Section -->
+<section class="prediction-section">
+    <div class="container d-flex justify-content-center">
+        <div class="card p-4" style="max-width: 500px; width: 100%;">
+
+            <h3 class="text-center mb-4 fw-bold">Upload Retina Image</h3>
+
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label class="form-label">Select Fundus Image</label>
+                    <input class="form-control form-control-lg"
+                           name="file"
+                           type="file"
+                           required>
+                </div>
+
+                <div class="d-grid">
+                    <button class="btn btn-dark btn-lg" type="submit">
+                        Predict
+                    </button>
+                </div>
+
+            </form>
+
+            {% if prediction %}
+            <div class="mt-4 text-center">
+                <h5 class="result-text">
+                    Prediction Result: {{ prediction }}
+                </h5>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <!-- DR Levels Image -->
+    <div class="container text-center">
+        <img src="static/level.png" 
+             alt="DR Levels"
+             class="info-image">
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
