@@ -1,0 +1,98 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Flask instance folder
+instance/
+.webassets-cache
+
+# Environment / virtualenv
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Secrets / config
+.env
+.env.*
+secrets.json
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# Logs
+logs/
+*.log
+
+# Large model / weights files
+*.h5
+*.hdf5
+*.ckpt
+*.pth
+*.pb
+models/
+weights/
+Updated-Xception-diabetic-retinopathy.h5
+
+# User uploaded images and runtime data
+User_Images/
+Users_Images/
+User_Images/*
+Users_Images/*
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Misc
+output/
